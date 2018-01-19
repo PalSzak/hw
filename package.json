@@ -1,0 +1,11 @@
+{
+  "name": "homework",
+  "version": "0.0.1",
+  "description": "Pal Szak - Homework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pal.szak@gmail.com",
+  "license": "MIT"
+}
