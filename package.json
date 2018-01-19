@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "description": "Pal Szak - Homework",
   "main": "app/index.js",
+  "repository": "avoid warning",
   "scripts": {
     "start": "node ./app/index.js",
     "test": "mocha --recursive",
-    "tdd": "mocha --recursive --reporter min --watch"
+    "tdd": "mocha --recursive --reporter min --watch",
+    "mongodb:start": "docker run --detach --publish 27017:27017 --rm --name hw-mongodb mongo:3.6.2-jessie",
+    "mongodb:stop": "docker stop hw-mongodb",
+    "mongodb:attach": "docker run --interactive --tty --rm --link hw-mongodb:mongodb --name hw-mongodb-client mongo:3.6.2-jessie mongo mongodb:27017"
   },
   "author": "pal.szak@gmail.com",
   "license": "MIT",
