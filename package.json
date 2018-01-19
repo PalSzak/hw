@@ -2,10 +2,15 @@
   "name": "homework",
   "version": "0.0.1",
   "description": "Pal Szak - Homework",
-  "main": "app.js",
+  "main": "app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./app/index.js",
+    "test": "mocha --recursive",
+    "tdd": "mocha --recursive --reporter min --watch"
   },
   "author": "pal.szak@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.0.0"
+  }
 }
