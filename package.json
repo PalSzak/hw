@@ -10,11 +10,18 @@
     "tdd": "mocha --recursive --reporter min --watch",
     "mongodb:start": "docker run --detach --publish 27017:27017 --rm --name hw-mongodb mongo:3.6.2-jessie",
     "mongodb:stop": "docker stop hw-mongodb",
-    "mongodb:attach": "docker run --interactive --tty --rm --link hw-mongodb:mongodb --name hw-mongodb-client mongo:3.6.2-jessie mongo mongodb:27017"
+    "mongodb:attach": "docker run --interactive --tty --rm --link hw-mongodb:mongodb --name hw-mongodb-client mongo:3.6.2-jessie mongo mongodb:27017",
+    "lint": "eslint ./app/**/*.js ./test/**/*.js"
   },
   "author": "pal.szak@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "mocha": "^5.0.0"
   }
 }
