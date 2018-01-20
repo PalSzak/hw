@@ -11,7 +11,7 @@
     "mongodb:start": "docker run --detach --publish 27017:27017 --rm --name hw-mongodb mongo:3.6.2-jessie",
     "mongodb:stop": "docker stop hw-mongodb",
     "mongodb:attach": "docker run --interactive --tty --rm --link hw-mongodb:mongodb --name hw-mongodb-client mongo:3.6.2-jessie mongo mongodb:27017",
-    "lint": "eslint ./app/**/*.js ./test/**/*.js"
+    "lint": "eslint ./app/index.js ./app/**/*.js ./test/**/*.js"
   },
   "author": "pal.szak@gmail.com",
   "license": "MIT",
