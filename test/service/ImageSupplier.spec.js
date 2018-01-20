@@ -1,5 +1,5 @@
-let assert = require('assert')
-let ImageSupplier = require('../../app/service/ImageSupplier.js')
+const assert = require('assert')
+const ImageSupplier = require('../../app/service/ImageSupplier.js')
 
 describe('Image supplier', function () {
   let imageSupplier
