@@ -15,3 +15,15 @@ A sample configuration with all the available options:
   "db_url" : '"mongodb://localhost:27017"
 }
 ```
+
+## Remaining Things TODO:
+
+ * Proper mongodb setup - indexing for sorted queries
+ * Virtualization - remove ugly global here, and introduce real config handling
+ * Implement remaining integration tests for Food dao
+ * Introduce E2E test level top of virtualization
+ * Filter out client data to remove `_id` field (security reason)
+ * split ui template to pieces (header for includes; image for images)
+ * add error pages for ui
+ * implement food dao unit tests
+ * ... query project for 'TODO' string you may find some
