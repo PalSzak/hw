@@ -4,20 +4,33 @@
     <title>Super Awesome</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style type="text/css">
+        .data {
+            min-width: 100%;
+            height: 300px;
+        }
+    </style>
 </head>
 <body class="container">
 
 <main>
     <div class="jumbotron">
         <h1>Food Pictures</h1>
-        <p>Welcome to templating using EJS</p>
     </div>
 
-    <ul>
-        <% images.forEach(function(image) { %>
-            <li><%= image.name %></li>
-        <% }); %>
-    </ul>
+    <% images.forEach(function(image) { %>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3><%= image.name %></h3>
+            </div>
+            <div class="col-xs-9">
+                <textarea class="data" disabled="true"><%= JSON.stringify(image, null, 2) %></textarea>
+            </div>
+            <div class="col-xs-3">
+                <img src="<%= image.thumbnail_url %>"/>
+            </div>
+        </div>
+    <% }); %>
 </main>
 
 </body>

@@ -7,9 +7,14 @@ module.exports = function (foodDao) {
   photos.set('views', './app/views')
 
   photos.get('/food', function (req, res) {
-    res.render('pages/food', {
-      images: foodDao.getRecent10()
-    })
+    foodDao.getRecent10()
+      .then((recentImages) => {
+        res.render('pages/food', {
+          images: recentImages
+        })
+      }).catch((e) => {
+        res.status(500).send('Error during db clean')
+      })
   })
 
   return photos
