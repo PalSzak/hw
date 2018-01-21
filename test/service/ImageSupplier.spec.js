@@ -9,17 +9,17 @@ describe('Image supplier', function () {
     assert(imageSupplier, "Can't create image supplier")
   })
 
-  describe('Timeing related functionality', function () {
+  describe('Timing related functionality', function () {
     it('Fire event in given time period', function (done) {
       this.timeout(350)
 
       imageSupplier = new (class MockedImageSupplier extends ImageSupplier {
         constructor () {
-          super(100)
+          super(undefined, 100)
           this.counter = 0
         }
 
-        fetchImages () {
+        loadNewImagesToDB () {
           this.counter++
           if (this.counter === 3) {
             done()
