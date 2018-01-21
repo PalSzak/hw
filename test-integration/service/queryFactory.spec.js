@@ -2,6 +2,8 @@ const assert = require('assert')
 const produceFoodImageQuery = require('../../app/service/queryFactory.js')
 const readConfigFile = require('../../app/service/configHandler.js')
 
+global.DEFAULT_CONFIG = {}
+
 describe('Query Factory', function () {
   it('food query against 500px', function (done) {
     this.timeout(5000)

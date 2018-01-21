@@ -2,6 +2,8 @@ const assert = require('assert')
 const sinon = require('sinon')
 const readConfigFile = require('../../app/service/configHandler.js')
 
+global.DEFAULT_CONFIG = {}
+
 describe('Configuration handler', function () {
   beforeEach(function () {
     sinon.sandbox.stub(console, 'error')

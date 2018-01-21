@@ -3,12 +3,19 @@ const express = require('express')
 const readConfigFile = require('./service/configHandler.js')
 const produceFoodImageQuery = require('./service/queryFactory.js')
 const ImageSupplier = require('./service/ImageSupplier.js')
+const FoodDao = require('./dao/FoodDao.js')
+
+global.DEFAULT_CONFIG = {
+  db_name: 'HW',
+  db_url: 'mongodb://localhost:27017'
+}
 
 async function start () {
   try {
     let config = await readConfigFile()
     let foodQuery = produceFoodImageQuery(config)
-    let foodDao = new (require('./dao/FoodDao.js'))()
+    let client = await FoodDao.connectToDatabase(config.db_url)
+    let foodDao = new FoodDao(client, config.db_name)
 
     let imageSupplier = new ImageSupplier(foodQuery, foodDao)
     imageSupplier.loadNewImagesToDB()
