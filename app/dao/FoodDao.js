@@ -64,7 +64,7 @@ module.exports = class FoodDao {
     return DUMMY_DATA
   }
 
-  storeIfNew () {
-    // TODO
+  storeIfNew (images) {
+    console.log(JSON.stringify(images, null, 2))
   }
 }

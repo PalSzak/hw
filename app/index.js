@@ -10,9 +10,8 @@ async function start () {
     let foodQuery = produceFoodImageQuery(config)
     let foodDao = new (require('./dao/FoodDao.js'))()
 
-    /* eslint-disable no-unused-vars */
-    let imageSupplier = new ImageSupplier(foodQuery)
-    /* eslint-enable no-unused-vars */
+    let imageSupplier = new ImageSupplier(foodQuery, foodDao)
+    imageSupplier.loadNewImagesToDB()
 
     let app = express()
     app.use('/api', require('./routes/api.js')(foodDao))
