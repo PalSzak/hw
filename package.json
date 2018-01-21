@@ -26,7 +26,9 @@
     "nodemon": "^1.14.11"
   },
   "dependencies": {
+    "500px": "^0.5.1",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "fs-extra": "^5.0.0"
   }
 }
