@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Pal Szak - Homework",
   "main": "app/index.js",
-  "repository": "avoid warning",
+  "repository": "git@github.com:PalSzak/hw.git",
   "scripts": {
     "start": "nodemon ./app/index.js",
     "test": "mocha --recursive",
